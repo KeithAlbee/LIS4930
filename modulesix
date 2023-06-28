@@ -1,0 +1,50 @@
+import sys
+
+from datetime import datetime
+from datetime import timedelta
+
+def main():
+    dt = datetime.now()
+    utc = datetime.utcnow()
+    time_string = dt.strftime("%X")
+
+
+# Question 1: Revise the code
+    for line in sys.stdin:
+        data = line.strip().split("\t")
+        if len(data) == 6:
+            date, time, store, item, cost, payment = data
+        print("{0}\t{1}".format(item, cost))
+
+
+
+
+# Question 2: Add the timedelta to the datetime and subtract 60 second and added 2 year
+print("Question 2:")
+print(datetime.now() + timedelta(days=1))
+print(datetime.now() - timedelta(seconds=60))
+print(datetime.now() + timedelta(days=730))
+
+
+
+
+# Question 3: Create a timedelta object representing 100 days, 10 hours, and 13 minutes
+print("Question 3:")
+from datetime import timedelta
+
+delta = timedelta(days=100, hours=10, minutes=13)
+
+print(delta)
+
+
+
+
+# Question 4: Write a function that takes two arguments (feet and inches) with this time object.
+# Add function that takes two argument.
+print("Question 4:")
+
+def measurement(feet, inches):
+    current_time = datetime.now()
+    print("Feet: {0}, Inches: {1}, Time: {2}".format(feet, inches, current_time))
+
+measurement(5, 6)
